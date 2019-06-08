@@ -23,13 +23,18 @@ dependencies:
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^0.1.2
-
   flare_flutter: any
+  mobx:
+  flutter_mobx:
+  fluro: ^1.4.0
+  flutter_svg:
 
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
+  build_runner: ^1.5.1
+  mobx_codegen:
 
 
 # For information on the generic Dart part of this file, see the
@@ -71,5 +76,14 @@ flutter:
   #       - asset: fonts/TrajanPro_Bold.ttf
   #         weight: 700
   #
+
+  fonts:
+    - family: IBM
+      fonts:
+        - asset: fonts/IBMPlexMono-Regular.ttf
+    - family: SS
+      fonts:
+        - asset: fonts/SS.otf
+
   # For details regarding fonts from package dependencies,
   # see https://flutter.io/custom-fonts/#from-packages
