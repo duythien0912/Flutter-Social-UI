@@ -53,7 +53,7 @@ class _HomePageState extends State<HomePage>
       icon: AspectRatio(
         aspectRatio: 1,
         child: Padding(
-          padding: const EdgeInsets.all(2.0),
+          padding: const EdgeInsets.all(4.0),
           child: FlareActor(
             'assets/${item.name}.flr',
             alignment: Alignment.center,
