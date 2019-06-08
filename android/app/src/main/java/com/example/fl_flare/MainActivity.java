@@ -1,4 +1,4 @@
-package com.example.fl_flare;
+package com.example.neuns_social;
 
 import android.os.Bundle;
 import io.flutter.app.FlutterActivity;

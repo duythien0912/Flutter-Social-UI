@@ -67,51 +67,56 @@ class _HomePageState extends State<HomePage>
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      bottomNavigationBar: Material(
-        child: Container(
-          decoration: BoxDecoration(
-            color: Color.fromRGBO(36, 42, 56, 1),
-            boxShadow: [
-              BoxShadow(
-                blurRadius: 13.0,
-                color: Colors.black.withOpacity(.5),
-                offset: Offset(0.0, 6.0),
+    return Container(
+      color: Color.fromRGBO(36, 42, 56, 1),
+      child: SafeArea(
+        child: Scaffold(
+          bottomNavigationBar: Material(
+            child: Container(
+              decoration: BoxDecoration(
+                color: Color.fromRGBO(36, 42, 56, 1),
+                boxShadow: [
+                  BoxShadow(
+                    blurRadius: 13.0,
+                    color: Colors.black.withOpacity(.1),
+                    offset: Offset(0.0, -10.0),
+                  ),
+                ],
+              ),
+              child: TabBar(
+                controller: _tabController,
+                indicatorPadding: EdgeInsets.only(left: 13.0, right: 13.0),
+                onTap: (index) {
+                  setState(() {
+                    _cuttentTab = index;
+                  });
+                },
+                tabs: items.map((k) {
+                  return buildTabItem(k);
+                }).toList(),
+              ),
+            ),
+          ),
+          body: TabBarView(
+            physics: NeverScrollableScrollPhysics(),
+            controller: _tabController,
+            children: <Widget>[
+              Container(
+                color: Color.fromRGBO(36, 42, 56, 1),
+              ),
+              ExploreScreen(),
+              Container(
+                color: Colors.lightGreen,
+              ),
+              Container(
+                color: Colors.red,
+              ),
+              Container(
+                color: Colors.blueAccent,
               ),
             ],
           ),
-          child: TabBar(
-            controller: _tabController,
-            indicatorPadding: EdgeInsets.only(left: 13.0, right: 13.0),
-            onTap: (index) {
-              setState(() {
-                _cuttentTab = index;
-              });
-            },
-            tabs: items.map((k) {
-              return buildTabItem(k);
-            }).toList(),
-          ),
         ),
-      ),
-      body: TabBarView(
-        physics: NeverScrollableScrollPhysics(),
-        controller: _tabController,
-        children: <Widget>[
-          Container(
-            color: Color.fromRGBO(36, 42, 56, 1),
-          ),
-          ExploreScreen(),
-          Container(
-            color: Colors.lightGreen,
-          ),
-          Container(
-            color: Colors.red,
-          ),
-          Container(
-            color: Colors.blueAccent,
-          ),
-        ],
       ),
     );
   }
